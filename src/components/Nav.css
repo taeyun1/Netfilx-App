@@ -1,4 +1,6 @@
-
+body {
+	background-color: #111;
+}
 .nav {
 	position: fixed;
 	top: 0;
