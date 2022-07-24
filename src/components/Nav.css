@@ -23,7 +23,7 @@
 	position: fixed;
 	left: 40px;
 
-	width: 120px;
+	width: 140px;
 	height: auto;
 
 	cursor: pointer;
@@ -43,25 +43,3 @@
 
 	
 }
-
-/* .nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-
-	padding: 20px;
-	
-}
-
-.nav__logo {
-	width: 150px;
-
-}
-
-.nav__avatar {
-	width: 80px;
-	height: 80px;
-	object-fit: cover;
-
-	border-radius: 50%;
-} */
