@@ -15,7 +15,7 @@ h2 {
   transition: 400ms all ease-in-out;
   cursor: pointer;
   width: 80px;
-  z-index: 1000;
+  z-index: 1;
   position: absolute;
   left: 0;
   top: 0;
@@ -24,15 +24,19 @@ h2 {
   align-items: center;
   justify-content: center;
   visibility: hidden;
+
+	font-size: 35px;
+	font-weight: bold;
+
 }
 .slider__arrow-right {
   padding: 20px 0;
   background-clip: content-box;
   box-sizing: border-box;
-  transition: 400ms all ease-in-out;
+  transition: 350ms all ease-in-out;
   cursor: pointer;
   width: 80px;
-  z-index: 1000;
+  z-index: 1;
   position: absolute;
   right: 0;
   top: 0;
@@ -41,7 +45,17 @@ h2 {
   align-items: center;
   justify-content: center;
   visibility: hidden;
+
+	font-size: 35px;
+	font-weight: bold;
+
 }
+.slider__arrow-Large {
+	font-size: 55px;
+	font-weight: bold;
+
+}
+
 .arrow {
   transition: 400ms all ease-in-out;
 }
