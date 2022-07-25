@@ -20,6 +20,8 @@
 }
 
 .banner {
+	/* position: relative;
+	top: 80px; */
   color: white;
   object-fit: contain;
   height: 448px;
@@ -70,6 +72,7 @@
   margin-left: 40px;
   padding-top: 140px;
   height: 190px;
+
 }
 
 .banner__title {
@@ -89,7 +92,6 @@
   max-width: 400px;
   height: 80px;
 }
-
 .banner--fadeBottom {
   height: 7.4rem;
   background-image: linear-gradient(

@@ -8,7 +8,6 @@ export default function Banner() {
   const [movie, setMovie] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
 
-  console.log("movie", movie);
   useEffect(() => {
     fetchData();
   }, []);
@@ -16,7 +15,6 @@ export default function Banner() {
   const fetchData = async () => {
     // 현재 상영중인 영화 정보 가져오기(여러 영화)
     const request = await axios.get(requests.fetchNowPlaying);
-    console.log(request);
     // 여러 영화 중 랜덤으로 영화 하나의 ID를 가져오기
     const movieId =
       request.data.results[
@@ -36,7 +34,6 @@ export default function Banner() {
     // 0 ~ 100 - 1 = 99 짜르고 ... 붙히기
     return str?.length > num ? str.substr(0, num - 1) + "..." : str;
   };
-  console.log(isClicked);
 
   if (!isClicked) {
     return (
