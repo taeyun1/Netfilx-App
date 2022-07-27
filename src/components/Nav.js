@@ -30,7 +30,7 @@ export default function Nav() {
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/800px-Netflix_2015_logo.svg.png"
         alt="Netflix logo"
         className="nav__logo"
-        onClick={() => window.location.reload()}
+        onClick={() => navigate("/")}
       />
       {/* <h1 className="nav__logo" onClick={() => window.location.reload()}>
         넷쁠릭스
