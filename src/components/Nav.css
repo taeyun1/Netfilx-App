@@ -48,6 +48,31 @@ body {
 	
 	object-fit: cover;
 	cursor: pointer;
+}
 
-	
+.nav__input {
+	/* 가운데 정렬 */
+	position: fixed;
+	left: 50%;
+	transform: translate(-50%, 0);
+
+	background-color: rgba(0, 0, 0, 0.582);
+	border-radius: 5px;
+
+	color: white;
+
+	padding: 6px 8px;
+	border: none;
+}
+
+.nav__input::placeholder {
+	color: white;
+}
+
+.nav__input::-webkit-input-placeholder {
+	color:#ccc;
+}
+
+.nav__input::-ms-input-placeholder {
+	color:#ccc;
 }

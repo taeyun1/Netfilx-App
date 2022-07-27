@@ -1,38 +1,32 @@
-import requests from "./api/requests";
+import { Outlet, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
-import Row from "./components/Row";
+import DetailPage from "./pages/DetailPage";
+import MainPage from "./pages/MainPage";
+import SearchPage from "./pages/SearchPage";
+
+const Layout = () => {
+  return (
+    <div>
+      <Nav />
+      <Outlet />
+      <Footer />
+    </div>
+  );
+};
 
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <Banner />
-      <Row
-        title="넷쁠릭스 에서만 볼수 있는 영화"
-        id="NO"
-        fetchUrl={requests.fetchNetflixOriginals}
-        isLargeRow
-      />
-
-      <Row
-        title="지금 인기있는 영화"
-        id="TN"
-        fetchUrl={requests.fetchTrending}
-      />
-
-      <Row
-        title="가장 인기있는 영화"
-        id="TR"
-        fetchUrl={requests.fetchTopRated}
-      />
-
-      <Row title="액션 영화" id="AM" fetchUrl={requests.fetchActionMovies} />
-
-      <Row title="코미디 영화" id="CM" fetchUrl={requests.fetchComedyMovies} />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          {/* index => http://localhost:3000/ 들어가면 -> MainPage컴포넌트랑 Layout이랑 같이 보여줌 */}
+          <Route index element={<MainPage />} />
+          <Route path=":movieId" element={<DetailPage />} />
+          <Route path="search" element={<SearchPage />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
