@@ -76,3 +76,19 @@ body {
 .nav__input::-ms-input-placeholder {
 	color:#ccc;
 }
+
+@media (max-width: 625px) {
+	.nav__logo {
+		width: 100px;
+		height: auto;
+	}
+	.nav__avatar {
+		width: 40px;
+		height: 40px;
+	}
+
+	.nav__input {
+		width: 30%;
+	}
+
+}
