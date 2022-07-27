@@ -68,12 +68,13 @@ export default function Banner() {
     );
   } else {
     return (
+      // 유튜브 Iframe API 사이트 : https://developers.google.com/youtube/player_parameters?hl=ko
       <Container>
         <HomeContainer>
           <Iframe
             width="640"
             height="360"
-            src={`https://www.youtube.com/embed/${movie.videos.results[0].key}?controls=0&autoplay=1&loop=1&mute=1&playlist=${movie.videos.results[0].key}`}
+            src={`https://www.youtube.com/embed/${movie.videos.results[0].key}?controls=1&autoplay=1&loop=1&mute=0&playlist=${movie.videos.results[0].key}`}
             title="YouTube video player"
             frameborder="0"
             allow=" autoplay; fullscreen"
