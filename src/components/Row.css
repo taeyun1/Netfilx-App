@@ -1,3 +1,5 @@
+/* !important를 뒤에 붙여주면 해당 스타일링 했던것을 덮어쓴다는 뜻 */
+
 .row {
   margin-left: 20px;
   color: white;
@@ -171,3 +173,33 @@ h2 {
   font-size: 1.3rem !important;
   font-weight: 600 !important;
 }
+
+
+/* ####### swiper 스타일링 ####### */
+
+/* 페이지 버튼 박스 */ 
+.swiper-pagination {
+	/* text-align: right; // 이미 기본값에 돼있음*/ 
+	margin: 0 -10px !important;
+}
+
+/* 페이지 버튼 바탕색 */
+/* .swiper-pagination-bullet  {
+	background: gray !important; // 이미 기본값에 돼있음
+	opacity: 1 !important;
+} */
+
+/* 페이지 버튼 선택 할때 */
+/* .swiper-pagination-bullet-active {
+	background: white !important; // 이미 기본값에 돼있음
+} */
+
+/* 페이지 화살표 버튼 */
+/* .swiper-button-prev, .swiper-button-next {
+	color: white !important;
+} */
+
+/* 페이지 화살표 버튼 폰트 사이즈 설정*/
+/* .swiper-button-prev::after, .swiper-button-next::after {
+	font-size: 60px
+} */
