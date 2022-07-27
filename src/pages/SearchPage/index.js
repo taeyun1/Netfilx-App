@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "../../api/axios";
+import { useDebounce } from "../../hooks/useDebounce";
 import "./SearchPage.css";
 
 export default function SearchPage() {
@@ -17,14 +18,15 @@ export default function SearchPage() {
   let query = useQuery();
 
   const searchTerm = query.get("q");
+  const debouncedSearchTerm = useDebounce(searchTerm, 500); // 0.5초에 한번씩 검색
   // console.log("searchTerm", searchTerm);
 
   // searchTerm이 바뀔때마다. 즉, 검색어를 입력할때마다 영화 데이터 가져오기
   useEffect(() => {
-    if (searchTerm) {
-      fetchSearchMoive(searchTerm);
+    if (debouncedSearchTerm) {
+      fetchSearchMoive(debouncedSearchTerm);
     }
-  }, [searchTerm]);
+  }, [debouncedSearchTerm]);
 
   // 검색한 영화의 results값 만 setSearchResults에 저장
   const fetchSearchMoive = async (searchTerm) => {
@@ -32,7 +34,7 @@ export default function SearchPage() {
       const req = await axios.get(
         `/search/multi?include_adult=false&query=${searchTerm}`
       );
-      // console.log(req);
+      console.log(req);
       setSearchResults(req.data.results);
     } catch (error) {
       console.log("error", error);
@@ -63,7 +65,9 @@ export default function SearchPage() {
     ) : (
       <section className="no-results">
         <div className="no-results__text">
-          <p>찾고자 하는 검색어 "{searchTerm}"에 맞는 영화가 없습니다.</p>
+          <p>
+            찾고자 하는 검색어 "{debouncedSearchTerm}"에 맞는 영화가 없습니다.
+          </p>
         </div>
       </section>
     );
